@@ -7,15 +7,15 @@
 
 main:
 	lui s11, 0x10010
-	addi s1, zero, discos
+	addi s0, zero, discos
 	addi t6, zero, 1	 	# valor para comparar
-	addi a1, s1, 0
+	addi a1, s0, 0
 	
 crear_torres:				# s11 torre 1		s1 torre 2	s2 torre 3
 	addi t1, t1, 1
 	sw t1, 0(s11)
 	addi s11, s11, 32		# se usan 32 por el acomodo de las torres
-	bne t1, s1, crear_torres
+	bne t1, s0, crear_torres
 	
 	addi s11, s11, -32
 	addi s1, s11, 4			# acomodo de la torre 1 y 2
